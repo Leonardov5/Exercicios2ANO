@@ -9,10 +9,12 @@ namespace Ex1
     {
         private int codigo {get; set;}
         private string designacao {get; set;}
+        private HashSet<menu> menus {get; set;}
 
         public tipoMenu(int codigo, string designacao){
             this.codigo = codigo;
             this.designacao = designacao;
+            this.menus = new HashSet<menu>();
         }
     }
 }

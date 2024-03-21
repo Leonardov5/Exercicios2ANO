@@ -9,10 +9,14 @@ namespace Ex1
     {
         private float preco {get; set;}
         private string designacao {get; set;}   
+        private tipoMenu tipo {get; set;}
+        private HashSet<pedido> pedidos {get; set;}
 
-        public menu(float preco, string designacao){
+        public menu(float preco, string designacao, tipoMenu tipo){
             this.preco = preco;
             this.designacao = designacao;
+            this.tipo = tipo;
+            this.pedidos = new HashSet<pedido>();
         }   
     }
 }

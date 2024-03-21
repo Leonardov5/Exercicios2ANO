@@ -9,10 +9,12 @@ namespace Ex1
     {
         private DateTime data {get; set;}
         private float valorALfa {get; set;}
-    
+        private HashSet<alfa> alfas {get; set;}
+
         public alfaTotalDiario(DateTime data, float valorALfa){
             this.data = data;
             this.valorALfa = valorALfa;
+            this.alfas = new HashSet<alfa>();
         }
     }
 }
