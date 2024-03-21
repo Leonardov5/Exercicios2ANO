@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.002.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ES2", "ES2", "{88B1AFE0-8014-4D4A-A214-6E59655726B0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OCL", "OCL", "{B3354293-BECC-4AED-8685-75963BB38275}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ex1", "ES2\OCL\Ex1\Ex1.csproj", "{950CBA66-23D1-40E3-A2D9-3A6A967E5BFC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{950CBA66-23D1-40E3-A2D9-3A6A967E5BFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{950CBA66-23D1-40E3-A2D9-3A6A967E5BFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{950CBA66-23D1-40E3-A2D9-3A6A967E5BFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{950CBA66-23D1-40E3-A2D9-3A6A967E5BFC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B3354293-BECC-4AED-8685-75963BB38275} = {88B1AFE0-8014-4D4A-A214-6E59655726B0}
+		{950CBA66-23D1-40E3-A2D9-3A6A967E5BFC} = {B3354293-BECC-4AED-8685-75963BB38275}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {75A3B8EC-2B45-4386-ABF2-DE76A7FA54BD}
+	EndGlobalSection
+EndGlobal
