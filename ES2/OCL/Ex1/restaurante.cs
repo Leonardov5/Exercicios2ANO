@@ -23,5 +23,9 @@ namespace Ex1
             this.alfas = new HashSet<alfa>();
             this.vendas = new HashSet<venda>();
         }
+
+        private Boolean isFranchisado(){
+            return alfas.Count > 0;
+        }
     }
 }
