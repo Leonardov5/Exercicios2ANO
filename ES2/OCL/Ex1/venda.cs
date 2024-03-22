@@ -7,11 +7,11 @@ namespace Ex1
 {
     public class venda
     {
-        private DateTime data {get; set;}
-        private float valorTotal {get; set;}
-        private Restaurante restaurante {get; set;}
-        private cliente cliente {get; set;}
-        private HashSet<pedido> pedidos {get; set;}
+        public DateTime data {get; set;}
+        public float valorTotal {get; set;}
+        public Restaurante restaurante {get; set;}
+        public cliente cliente {get; set;}
+        public HashSet<pedido> pedidos {get; set;}
 
         public venda(DateTime data, float valorTotal, Restaurante restaurante){
             this.data = data;
@@ -20,5 +20,14 @@ namespace Ex1
             this.cliente = null;
             this.pedidos = new HashSet<pedido>();
         }
+
+        public bool Validate(){
+            valorTotal = pedidos.Sum(pedido => pedido.precoTotal);
+            return valorTotal > 0;
+        }
+
+        // OCL: context venda
+        // inv: self.pedidos->collect(p: pedido | p.precoTotal).sum() > 0
+
     }
 }

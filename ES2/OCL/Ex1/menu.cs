@@ -7,16 +7,23 @@ namespace Ex1
 {
     public class menu
     {
-        private float preco {get; set;}
-        private string designacao {get; set;}   
-        private tipoMenu tipo {get; set;}
-        private HashSet<pedido> pedidos {get; set;}
+        public float preco {get; set;}
+        public string designacao {get; set;}   
+        public tipoMenu tipo {get; set;}
+        public HashSet<pedido> pedidos {get; set;}
 
         public menu(float preco, string designacao, tipoMenu tipo){
             this.preco = preco;
             this.designacao = designacao;
             this.tipo = tipo;
             this.pedidos = new HashSet<pedido>();
-        }   
+        } 
+
+        public bool Validate(){
+            return preco > 0;
+        }
+
+        // OCL: context menu
+        // inv: preco > 0  
     }
 }

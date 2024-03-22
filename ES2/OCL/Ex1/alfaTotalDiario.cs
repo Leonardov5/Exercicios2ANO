@@ -7,14 +7,24 @@ namespace Ex1
 {
     public class alfaTotalDiario
     {
-        private DateTime data {get; set;}
-        private float valorALfa {get; set;}
-        private HashSet<alfa> alfas {get; set;}
+        public DateTime data {get; set;}
+        public float valorAlfaD {get; set;};
+        public HashSet<alfa> alfas {get; set;}
 
-        public alfaTotalDiario(DateTime data, float valorALfa){
+        public alfaTotalDiario(DateTime data, float valorAlfaD){
             this.data = data;
-            this.valorALfa = valorALfa;
+            this.valorAlfaD = valorAlfaD;
             this.alfas = new HashSet<alfa>();
         }
+
+        public bool Validate(){
+            if (alfas.Count == 0)
+                return false;
+
+            return valorAlfaD > 0;
+        }    
+
+        // OCL: context alfaTotalDiario
+        // inv: alfas->size() > 0 implies valorAlfaD > 0 
     }
 }

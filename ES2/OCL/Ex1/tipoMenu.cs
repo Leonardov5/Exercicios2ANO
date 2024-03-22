@@ -7,9 +7,9 @@ namespace Ex1
 {
     public class tipoMenu
     {
-        private int codigo {get; set;}
-        private string designacao {get; set;}
-        private HashSet<menu> menus {get; set;}
+        public int codigo {get; set;}
+        public string designacao {get; set;}
+        public HashSet<menu> menus {get; set;}
 
         public tipoMenu(int codigo, string designacao){
             this.codigo = codigo;

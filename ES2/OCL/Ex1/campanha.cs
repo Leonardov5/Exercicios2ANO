@@ -8,17 +8,23 @@ namespace Ex1
 {
     public class campanha
     {
-        private string Nome {get; set;}
-        private float valorGestao {get; set;}
-        private HashSet<Restaurante> restaurantes {get; set;}
+        public string Nome {get; set;}
+        public float valorGasto {get; set;}
+        public HashSet<Restaurante> restaurantes {get; set;}
 
         public campanha(string Nome)
         {
             this.Nome = Nome;
-            this.valorGestao = 0;
+            this.valorGasto = 0;
             this.restaurantes = new HashSet<Restaurante>();
         }
 
-        
+        public bool Validate()
+        {
+            return valorGasto > 0;
+        }        
+
+        // OCL: context campanha
+        // inv: valorGasto > 0
     }
 }

@@ -7,11 +7,11 @@ namespace Ex1
 {
     public class despesa
     {
-        private DateTime data {get; set;}
-        private float valor {get; set;}
-        private string descricao {get; set;}    
-        private Restaurante restaurante {get; set;}
-        private tipoDespesa tipo {get; set;}
+        public DateTime data {get; set;}
+        public float valor {get; set;}
+        public string descricao {get; set;}    
+        public Restaurante restaurante {get; set;}
+        public tipoDespesa tipo {get; set;}
 
         public despesa(DateTime data, float valor, string descricao, Restaurante restaurante, tipoDespesa tipo){
             this.data = data;

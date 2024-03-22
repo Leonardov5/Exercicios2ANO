@@ -7,14 +7,22 @@ namespace Ex1
 {
     public class cliente
     {
-        private string nome {get; set;}
-        private string NIF {get; set;}
-        private HashSet<venda> vendas {get; set;}
+        public string nome {get; set;}
+        public string NIF {get; set;}
+        public HashSet<venda> vendas {get; set;}
 
         public cliente(string nome, string NIF){
             this.nome = nome;
             this.NIF = NIF;
             this.vendas = new HashSet<venda>();
         }
+
+        public bool Validate(){
+            return NIF.Length == 9;
+        }
+
+        // OCL: context cliente
+        // inv: NIF.size() = 9
+
     }
 }
