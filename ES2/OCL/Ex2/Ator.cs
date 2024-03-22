@@ -9,5 +9,13 @@ namespace Ex2
     {
         public string Nome {get; set;}
         public int shortBio {get; set;}
+        private HashSet<string> programasParticipados;
+
+        public Ator(string nome, int shortBio)
+        {
+            this.Nome = nome;
+            this.shortBio = shortBio;
+            programasParticipados = new HashSet<string>();
+        }
     }
 }
