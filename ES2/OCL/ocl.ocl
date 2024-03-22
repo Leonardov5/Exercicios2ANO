@@ -1,0 +1,71 @@
+//EX1
+
+context acompanhamento
+inv: self.preco > 0
+
+context alfa
+inv: self.valorAlfa > 0
+
+context alfaTotalDiario
+inv: self.valorAlfaD = self.alfas->collect(a: alfa | a.valorAlfa)->sum()
+inv: self.valorAlfaD > 0
+inv: self.alfas->forAll(a: alfa | a.data = self.data)
+
+context bebida
+inv: self.preco > 0
+
+context campanha
+inv: self.valorGasto > 0
+
+context cliente
+inv: self.NIF.size() = 9
+
+context menu
+inv: self.preco > 0  
+
+context pedido
+inv: self.precoTotal = self.menu.preco + ( if self.sobremesa->notEmpty() then self.sobremesa.preco else 0 endif) + (if self.bebida->notEmpty() then self.bebida.preco else 0 endif) + (if self.acompanhamento->notEmpty() then self.acompanhamento.preco else 0 endif)
+
+context Restaurante
+inv: not self.isFranchisado() implies self.alfas->isEmpty
+inv: self.royalties = self.vendas->collect( v : Venda | v.valorTotal)->sum() - 
+     self.despesas->collect( d : Despesa | d.valor)->sum() - 
+     self.alfas->collect( a : Alfa | a.valorAlfa)->sum() - 
+     self.campanhas->collect( c : Campanha | c.valorGasto)->sum()
+
+context sobremesa
+inv: self.preco > 0
+
+context venda
+inv: self.pedidos->collect(p: pedido | p.precoTotal)->sum() > 0
+
+
+//EX2
+
+context GrelhaProgramacao
+inv: self.programa->collect()(p: Programa | p.getDuracao())->sum() <= 24
+
+context Programa 
+inv: self.duracao > 0
+
+
+//EX3
+
+context LinhaFatura
+inv: if (self.oclIsTypeOf(LinhaFatProduto))then self.valorLinha = self.oclAsType(LinhaFatProduto).precoUnitario * self.oclAsType(LinhaFatProduto).quantidade endif
+or
+if (self.oclIsTypeOf(LinhaFatServico) and self.oclIsKindOf(LinhaServicoTempo)) then self.valorLinha = self.oclAsType(LinhaServicoTempo).precoPorHora * self.oclAsType(LinhaServicoTempo).tempo endif
+or
+if (self.oclIsTypeOf(LinhaFatServico) and self.oclIsKindOf(LinhaServicoFixo)) then self.valorLinha = self.oclAsType(LinhaServicoFixo).precoTotal endif
+
+
+//EX4
+
+context Serie
+inv: self.numTemporada = self.episodios->collect(e : Episodio | e.temporada)->max()
+
+
+//EX5
+
+context Playlist 
+inv: self.duracao = self.itensPlaylist->collect(i : ItemStream | i.duracao)->sum()

@@ -26,6 +26,5 @@ namespace Ex1
         // OCL: context alfa
         // inv: valorAlfa > 0
 
-        
     }
 }
